@@ -1,3 +1,34 @@
-Ce projet est le fruit du travail de Ness Tchenio et Alexandra Baron. 
-Nous avons passé beaucoup de temps sur ce projet mais nous sommes fières de ce que nous avons réussi à produire. 
+# RISC-V Processor Pipeline and Memory Optimization
 
+## Overview
+This repository contains the work done as part of the Architecture of Processors 2 (ADP2) course at Mines Saint-Étienne. The project involves the study, simulation, and optimization of a RISC-V 32-bit processor pipeline. The work covers three practical assignments:
+
+1. **Pipeline Architecture Analysis** - Understanding and simulating the five-stage pipeline of a RISC-V processor.
+2. **Dependency and Conflict Resolution** - Implementing techniques such as stalls and bypassing to handle data and control hazards.
+3. **Memory Cache Optimization** - Designing and implementing direct-mapped and two-way set associative caches to improve performance.
+
+## Key Implementations
+### Pipeline Stages
+- **Instruction Fetch (IF)** - Fetches instruction from memory.
+- **Instruction Decode (ID)** - Decodes instruction and reads registers.
+- **Execution (EXE)** - Performs ALU operations.
+- **Memory Access (MEM)** - Reads/Writes data memory.
+- **Write Back (WB)** - Writes results back to registers.
+
+### Conflict Resolution Methods
+- **Software-based**: Insert NOPs to delay dependent instructions.
+- **Hardware-based**:
+  - **Stalls (Interlocks)**: Temporarily halt the pipeline to resolve dependencies.
+  - **Bypassing (Forwarding)**: Directly pass results to dependent instructions to avoid stalls.
+
+### Cache Implementations
+- **Direct-Mapped Cache**
+  - Uses an index and tag method for fast lookups.
+  - Performance analyzed based on hit/miss rates.
+- **Two-Way Set Associative Cache**
+  - Uses a least-recently-used (LRU) policy for replacement.
+  - Improves cache efficiency compared to direct-mapped.
+
+## Contributors
+- **Alexandra Baron**
+- **Ness Tchenio**
